@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar/NavBar";
+import GamesGrid from "./components/GamesGrid/GamesGrid";
 
 const App = () => {
   const getStoredDarkMode = () =>
@@ -22,7 +23,9 @@ const App = () => {
 
       <aside className="hidden md:block">aside</aside>
 
-      <main className="col-span-2 md:col-span-1 md:col-start-2">main</main>
+      <main className="col-span-2 md:col-span-1 md:col-start-2">
+        <GamesGrid />
+      </main>
     </div>
   );
 };
