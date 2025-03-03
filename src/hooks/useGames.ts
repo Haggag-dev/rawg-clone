@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
-import { TbZoomCancelFilled } from "react-icons/tb";
 import { CanceledError } from "axios";
 
 interface Game {
