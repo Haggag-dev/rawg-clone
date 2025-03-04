@@ -21,9 +21,9 @@ const App = () => {
     <div className="grid grid-cols-[210px_1fr] text-black dark:text-white">
       <NavBar dark={dark} toggleDarkMode={() => toggleDarkMode()} />
 
-      <aside className="hidden md:block">aside</aside>
+      <aside className="hidden lg:block">aside</aside>
 
-      <main className="col-span-2 md:col-span-1 md:col-start-2">
+      <main className="col-span-2 lg:col-span-1 lg:col-start-2">
         <GamesGrid />
       </main>
     </div>

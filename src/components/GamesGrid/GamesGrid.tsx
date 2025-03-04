@@ -1,4 +1,5 @@
 import useGames from "../../hooks/useGames";
+import GameCard from "./GameCard";
 
 const GamesGrid = () => {
   const { games, error } = useGames();
@@ -6,11 +7,11 @@ const GamesGrid = () => {
   return (
     <>
       {error && <p>{error}</p>}
-      <ul>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {games.map((game) => (
-          <p key={game.id}>{game.name}</p>
+          <GameCard key={game.id} game={game} />
         ))}
-      </ul>
+      </section>
     </>
   );
 };
