@@ -1,24 +1,35 @@
 interface Props {
   score: number;
+  dark: boolean;
 }
 
 interface ScoreColor {
-  bg: string;
-  text: string;
+  colorDarker: string;
+  color: string;
 }
 
-const CriticScore = ({ score }: Props) => {
+const CriticScore = ({ score, dark }: Props) => {
   let scoreColor: ScoreColor =
     score > 75
-      ? { bg: "#344038", text: "#9AE6B4" }
+      ? { colorDarker: "#344038", color: "#9AE6B4" }
       : score > 65
-      ? { bg: "yellow-500", text: "yellow-500" }
-      : { bg: "#404040", text: "white" };
+      ? { colorDarker: "yellow-500", color: "yellow-500" }
+      : { colorDarker: "#404040", color: "white" };
 
   return (
     <div
       className={"w-8 text-center text-sm rounded-sm font-[650] pb-px"}
-      style={{ backgroundColor: scoreColor.bg, color: scoreColor.text }}
+      style={
+        dark
+          ? {
+              backgroundColor: scoreColor.colorDarker,
+              color: scoreColor.color,
+            }
+          : {
+              backgroundColor: scoreColor.color,
+              color: scoreColor.colorDarker,
+            }
+      }
     >
       {score}
     </div>

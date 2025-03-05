@@ -7,26 +7,27 @@ import noImage from "../../assets/no-image-placeholder.webp";
 
 interface Props {
   game: Game;
+  dark: boolean;
 }
 
-const GameCard = ({ game }: Props) => {
+const GameCard = ({ game, dark }: Props) => {
   const croppedImage = getCroppedImageUrl(game.background_image);
   return (
-    <div className="px-3 mb-3">
+    <div className="px-3 mb-3 flex flex-col h-full">
       <img
         className="rounded-t-sm"
         src={croppedImage ? croppedImage : noImage}
         alt={`${game.name} Image`}
       />
-      <div className="bg-[#202020] p-4 rounded-b-sm">
+      <div className="bg-gray-200 dark:bg-[#202020] p-4 rounded-b-sm grow-1 flex flex-col justify-between">
         <div className="flex justify-between">
           <PlatformIconsList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
 
-          <CriticScore score={game.metacritic} />
+          <CriticScore score={game.metacritic} dark={dark} />
         </div>
-        <p className="text-xl font-bold ">
+        <p className="text-2xl font-bold mt-3 mb-1 text-start grow-1">
           {game.name} <CriticScoreIcon score={game.metacritic} />
         </p>
       </div>
