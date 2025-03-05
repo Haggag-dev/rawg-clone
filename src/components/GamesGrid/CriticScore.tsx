@@ -17,7 +17,7 @@ const CriticScore = ({ score }: Props) => {
 
   return (
     <div
-      className={"h-5 w-7 rounded-sm text-sm  text-center"}
+      className={"w-8 text-center text-sm rounded-sm font-[650] pb-px"}
       style={{ backgroundColor: scoreColor.bg, color: scoreColor.text }}
     >
       {score}
