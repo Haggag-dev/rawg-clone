@@ -4,10 +4,11 @@ import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   dark: boolean;
+  genreId?: number;
 }
 
-const GamesGrid = ({ dark }: Props) => {
-  const { data, error, loading } = useGames();
+const GamesGrid = ({ dark, genreId }: Props) => {
+  const { data, error, loading } = useGames(genreId);
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7];
 
   return (

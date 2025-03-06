@@ -1,8 +1,14 @@
 import useGenres from "../../hooks/useGenres";
 
-const GenreList = () => {
+interface Props {
+  genreQuery: number | undefined;
+  setGenreQuery: (genreQuery: number) => void;
+}
+
+const GenreList = ({ genreQuery, setGenreQuery }: Props) => {
   const { data, error, loading } = useGenres();
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   return (
     <div className="pl-6">
       {error && <p className="text-red-500">{error}</p>}
@@ -28,7 +34,12 @@ const GenreList = () => {
                   src={genre.image_background}
                   alt={`${genre.name} Image`}
                 />
-                <button className="text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline">
+                <button
+                  className={`text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline ${
+                    genre.id === genreQuery ? "font-bold" : ""
+                  }`}
+                  onClick={() => setGenreQuery(genre.id)}
+                >
                   {genre.name}
                 </button>
               </li>
