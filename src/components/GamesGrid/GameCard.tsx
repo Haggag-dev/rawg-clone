@@ -14,7 +14,7 @@ const GameCard = ({ game, dark }: Props) => {
   const croppedImage = getCroppedImageUrl(game.background_image);
 
   return (
-    <div className="px-3 mb-3 flex flex-col h-full">
+    <div className="px-3 mb-3 flex flex-col h-full overflow-hidden">
       <img
         className="rounded-t-lg"
         src={croppedImage ? croppedImage : noImage}
