@@ -19,7 +19,7 @@ const App = () => {
   const toggleDarkMode = () => setDark((prevDark: boolean) => !prevDark);
 
   return (
-    <div className="grid grid-cols-[210px_1fr] text-black dark:text-white">
+    <div className="grid grid-cols-[250px_1fr] gap-y-6 text-black dark:text-white">
       <NavBar dark={dark} toggleDarkMode={() => toggleDarkMode()} />
 
       <aside className="hidden lg:block">
