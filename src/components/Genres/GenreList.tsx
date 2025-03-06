@@ -28,9 +28,9 @@ const GenreList = () => {
                   src={genre.image_background}
                   alt={`${genre.name} Image`}
                 />
-                <span className="text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline">
+                <button className="text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline">
                   {genre.name}
-                </span>
+                </button>
               </li>
             ))}
       </ul>
