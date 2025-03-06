@@ -1,11 +1,11 @@
-import useGenres from "../../hooks/useGenres";
+import useGenres, { Genre } from "../../hooks/useGenres";
 
 interface Props {
-  genreQuery: number | undefined;
-  setGenreQuery: (genreQuery: number) => void;
+  selectedGenre: Genre | null;
+  setSelectedGenre: (genre: Genre) => void;
 }
 
-const GenreList = ({ genreQuery, setGenreQuery }: Props) => {
+const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
   const { data, error, loading } = useGenres();
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -36,9 +36,9 @@ const GenreList = ({ genreQuery, setGenreQuery }: Props) => {
                 />
                 <button
                   className={`text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline ${
-                    genre.id === genreQuery ? "font-bold" : ""
+                    genre.id === selectedGenre?.id ? "font-bold" : ""
                   }`}
-                  onClick={() => setGenreQuery(genre.id)}
+                  onClick={() => setSelectedGenre(genre)}
                 >
                   {genre.name}
                 </button>

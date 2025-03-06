@@ -3,10 +3,11 @@ import GamesGrid from "./components/GamesGrid/GamesGrid";
 import GenreList from "./components/Genres/GenreList";
 import useDarkMode from "./hooks/useDarkMode";
 import { useState } from "react";
+import { Genre } from "./hooks/useGenres";
 
 const App = () => {
   const { dark, toggleDarkMode } = useDarkMode();
-  const [genreQuery, setGenreQuery] = useState<number | undefined>(undefined);
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
   return (
     <div className="grid grid-cols-[250px_1fr] gap-y-6 text-black dark:text-white">
@@ -14,13 +15,14 @@ const App = () => {
 
       <aside className="hidden lg:block">
         <GenreList
-          genreQuery={genreQuery}
-          setGenreQuery={(genreQuery: number) => setGenreQuery(genreQuery)}
+          selectedGenre={selectedGenre}
+          setSelectedGenre={(genre: Genre) => setSelectedGenre(genre)}
         />
       </aside>
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
-        <GamesGrid dark={dark} genreId={genreQuery} />
+        <h2></h2>
+        <GamesGrid dark={dark} genre={selectedGenre} />
       </main>
     </div>
   );
