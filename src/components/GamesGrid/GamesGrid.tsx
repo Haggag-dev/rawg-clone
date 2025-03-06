@@ -14,7 +14,7 @@ const GamesGrid = ({ dark, genre }: Props) => {
 
   return (
     <>
-      {error && <p className="text-red-500">{error}</p>}
+      {error && <p className="ml-3 text-4xl text-red-500 font-bold">{error}</p>}
       <section className="grid auto-rows-fr items-stretch gap-y-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-4">
         {loading
           ? skeletonKeys.map((skeletonKey) => (

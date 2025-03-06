@@ -23,7 +23,7 @@ const App = () => {
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
         <h2 className="text-5xl ml-3 mb-12 font-bold">
-          {selectedGenre ? capitalizeFirstLetter(selectedGenre.name) : "Games"}
+          {selectedGenre ? capitalizeFirstLetter(selectedGenre.name) : "All"} Games
         </h2>
         <GamesGrid dark={dark} genre={selectedGenre} />
       </main>
