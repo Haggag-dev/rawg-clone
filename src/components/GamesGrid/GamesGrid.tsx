@@ -7,7 +7,7 @@ interface Props {
 }
 
 const GamesGrid = ({ dark }: Props) => {
-  const { games, error, loading } = useGames();
+  const { data, error, loading } = useGames();
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7];
 
   return (
@@ -18,7 +18,7 @@ const GamesGrid = ({ dark }: Props) => {
           ? skeletonKeys.map((skeletonKey) => (
               <GameCardSkeleton key={skeletonKey} />
             ))
-          : games.map((game) => (
+          : data.map((game) => (
               <GameCard key={game.id} game={game} dark={dark} />
             ))}
       </section>
