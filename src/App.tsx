@@ -5,6 +5,7 @@ import useDarkMode from "./hooks/useDarkMode";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
+import PlatformSelector from "./components/Selectors/PlatformSelector";
 
 const App = () => {
   const { dark, toggleDarkMode } = useDarkMode();
@@ -22,9 +23,13 @@ const App = () => {
       </aside>
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
-        <h2 className="text-5xl ml-3 mb-12 font-bold">
-          {selectedGenre ? capitalizeFirstLetter(selectedGenre.name) : "All"} Games
+        <h2 className="text-5xl ml-3 mb-7 font-bold">
+          {selectedGenre ? capitalizeFirstLetter(selectedGenre.name) : "All"}{" "}
+          Games
         </h2>
+
+        <PlatformSelector />
+
         <GamesGrid dark={dark} genre={selectedGenre} />
       </main>
     </div>
