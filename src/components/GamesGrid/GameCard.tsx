@@ -15,11 +15,11 @@ const GameCard = ({ game, dark }: Props) => {
   return (
     <div className="px-3 mb-3 flex flex-col h-full">
       <img
-        className="rounded-t-sm"
+        className="rounded-t-lg"
         src={croppedImage ? croppedImage : noImage}
         alt={`${game.name} Image`}
       />
-      <div className="bg-gray-200 dark:bg-[#202020] p-4 rounded-b-sm grow-1 flex flex-col justify-between">
+      <div className="bg-gray-200 dark:bg-[#202020] p-4 rounded-b-lg grow-1 flex flex-col justify-between">
         <div className="flex justify-between">
           <PlatformIconsList
             platforms={game.parent_platforms.map((p) => p.platform)}
@@ -28,7 +28,7 @@ const GameCard = ({ game, dark }: Props) => {
           <CriticScore score={game.metacritic} dark={dark} />
         </div>
         <p className="text-2xl font-bold mt-3 mb-1 text-start grow-1">
-          {game.name} <CriticScoreIcon score={game.metacritic} />
+          {game.name} <CriticScoreIcon score={game.rating} />
         </p>
       </div>
     </div>

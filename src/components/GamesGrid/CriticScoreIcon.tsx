@@ -4,7 +4,7 @@ interface Props {
 
 const CriticScoreIcon = ({ score }: Props) => {
   const scoreIcon =
-    score > 90 ? "🎯" : score > 80 ? "👍" : score > 70 ? "😑" : "⛔";
+    score > 4 ? "🎯" : score > 3 ? "👍" : score > 2 ? "😑" : "⛔";
   return <span className="text-xl">{scoreIcon}</span>;
 };
 
