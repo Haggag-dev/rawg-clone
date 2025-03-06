@@ -12,6 +12,7 @@ interface Props {
 
 const GameCard = ({ game, dark }: Props) => {
   const croppedImage = getCroppedImageUrl(game.background_image);
+
   return (
     <div className="px-3 mb-3 flex flex-col h-full">
       <img
@@ -27,7 +28,7 @@ const GameCard = ({ game, dark }: Props) => {
 
           <CriticScore score={game.metacritic} dark={dark} />
         </div>
-        <p className="text-2xl font-bold mt-3 mb-1 text-start grow-1">
+        <p className="text-2xl font-bold mt-3 text-start grow-1">
           {game.name} <CriticScoreIcon score={game.rating} />
         </p>
       </div>

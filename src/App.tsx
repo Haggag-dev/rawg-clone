@@ -24,7 +24,7 @@ const App = () => {
       <aside className="hidden lg:block">aside</aside>
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
-        <GamesGrid />
+        <GamesGrid dark={dark} />
       </main>
     </div>
   );
