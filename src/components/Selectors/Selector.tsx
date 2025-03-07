@@ -7,13 +7,13 @@ import { PlatformDetails } from "../../hooks/useGames";
 interface Props<T extends OptionType> {
   buttonName: string;
   data: T[];
-  setSelectedPlatform: (platform: PlatformDetails) => void;
+  setState: (update: any) => void;
 }
 
 const Selector = <T extends OptionType>({
   buttonName,
   data,
-  setSelectedPlatform,
+  setState,
 }: Props<T>) => {
   const [toggle, setToggle] = useState(false);
   const selectorRef = useRef<HTMLButtonElement>(null);
@@ -55,9 +55,7 @@ const Selector = <T extends OptionType>({
             <Options
               options={data}
               setToggle={() => setToggle(!toggle)}
-              setSelectedPlatform={(platform: PlatformDetails) =>
-                setSelectedPlatform(platform)
-              }
+              setState={(platform: PlatformDetails) => setState(platform)}
             />
           </motion.div>
         )}

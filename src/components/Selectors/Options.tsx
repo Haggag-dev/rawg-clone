@@ -8,13 +8,13 @@ export interface OptionType {
 interface Props<T extends OptionType> {
   setToggle: () => void;
   options: T[];
-  setSelectedPlatform: (platform: PlatformDetails) => void;
+  setState: (update: any) => void;
 }
 
 const Options = <T extends OptionType>({
   options,
   setToggle,
-  setSelectedPlatform,
+  setState,
 }: Props<T>) => {
   return (
     <div className="z-1 absolute flex flex-col dark:bg-neutral-800 rounded-lg gap-y-2 items-start w-55 py-3 outline-1 outline-solid outline-neutral-700">
@@ -24,7 +24,7 @@ const Options = <T extends OptionType>({
           key={option.id}
           onClick={() => {
             setToggle();
-            setSelectedPlatform(option);
+            setState(option);
           }}
         >
           {option.name}

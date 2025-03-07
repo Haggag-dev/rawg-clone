@@ -14,9 +14,7 @@ const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
     <Selector
       buttonName={selectedPlatform?.name || "Platform"}
       data={data}
-      setSelectedPlatform={(platform: PlatformDetails) =>
-        setSelectedPlatform(platform)
-      }
+      setState={(platform: PlatformDetails) => setSelectedPlatform(platform)}
     />
   );
 };
