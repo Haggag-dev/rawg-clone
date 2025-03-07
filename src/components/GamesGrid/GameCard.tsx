@@ -18,7 +18,7 @@ const GameCard = ({ game, dark }: Props) => {
         alt={`${game.name} Image`}
       />
       <div className="bg-gray-200 dark:bg-[#202020] p-4 rounded-b-lg grow-1 flex flex-col justify-between">
-        <div className="flex justify-between">
+        <div className="flex justify-between items-center">
           <PlatformIconsList
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
