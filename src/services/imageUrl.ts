@@ -1,14 +1,13 @@
 import noImage from "../assets/no-image-placeholder.webp";
 
 const getCroppedImageUrl = (url: string) => {
-  console.log(url);
   if (!url) return noImage;
 
-  const index = url.indexOf("media/");
-  return url
-    .slice(0, index)
-    .concat("media/crop/600/400")
-    .concat(url.slice(url.indexOf("/games")));
+  const target = "media/";
+  const index = url.indexOf(target) + target.length;
+  const updatedUrl = `${url.slice(0, index)}crop/600/400/${url.slice(index)}`;
+
+  return updatedUrl;
 };
 
 export default getCroppedImageUrl;
