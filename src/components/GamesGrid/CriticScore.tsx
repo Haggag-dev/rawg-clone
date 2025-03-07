@@ -13,7 +13,7 @@ const CriticScore = ({ score, dark }: Props) => {
     score > 75
       ? { colorDarker: "#344038", color: "#9AE6B4" }
       : score > 65
-      ? { colorDarker: "yellow-500", color: "yellow-500" }
+      ? { colorDarker: "#434231", color: "#FAF089" }
       : { colorDarker: "#404040", color: "white" };
 
   return (

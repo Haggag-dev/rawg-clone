@@ -12,8 +12,12 @@ import { BsNintendoSwitch } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
 
+interface AllPlatformDetails extends PlatformDetails {
+  slug: string;
+}
+
 interface Props {
-  platforms: PlatformDetails[];
+  platforms: AllPlatformDetails[];
 }
 
 const PlatformIconsList = ({ platforms }: Props) => {
