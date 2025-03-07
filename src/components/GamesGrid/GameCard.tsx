@@ -23,7 +23,9 @@ const GameCard = ({ game, dark }: Props) => {
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
 
-          <CriticScore score={game.metacritic} dark={dark} />
+          {game.metacritic ? (
+            <CriticScore score={game.metacritic} dark={dark} />
+          ) : null}
         </div>
         <p className="text-2xl font-bold mt-3 text-start grow-1">
           {game.name} <CriticScoreIcon score={game.rating} />
