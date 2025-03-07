@@ -6,10 +6,16 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
 import PlatformSelector from "./components/Selectors/PlatformSelector";
+import { PlatformDetails } from "./hooks/useGames";
+
+export interface GameQuery {
+  genre: Genre;
+  platform: PlatformDetails | null;
+}
 
 const App = () => {
   const { dark, toggleDarkMode } = useDarkMode();
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   return (
     <div className="grid grid-cols-[250px_1fr] gap-y-3 text-black dark:text-white">
@@ -17,20 +23,29 @@ const App = () => {
 
       <aside className="hidden lg:block mt-3">
         <GenreList
-          selectedGenre={selectedGenre}
-          setSelectedGenre={(genre: Genre) => setSelectedGenre(genre)}
+          selectedGenre={gameQuery.genre}
+          setSelectedGenre={(genre: Genre) =>
+            setGameQuery({ ...gameQuery, genre })
+          }
         />
       </aside>
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
         <h2 className="text-5xl ml-3 mb-7 font-bold">
-          {selectedGenre ? capitalizeFirstLetter(selectedGenre.name) : "All"}{" "}
+          {gameQuery
+            ? capitalizeFirstLetter(gameQuery.genre?.name || "")
+            : "All"}{" "}
           Games
         </h2>
 
-        <PlatformSelector />
+        <PlatformSelector
+          selectedPlatform={gameQuery.platform}
+          setSelectedPlatform={(platform: PlatformDetails) =>
+            setGameQuery({ ...gameQuery, platform })
+          }
+        />
 
-        <GamesGrid dark={dark} genre={selectedGenre} />
+        <GamesGrid dark={dark} gameQuery={gameQuery} />
       </main>
     </div>
   );

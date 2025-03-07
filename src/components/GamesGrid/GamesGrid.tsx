@@ -1,15 +1,15 @@
+import { GameQuery } from "../../App";
 import useGames from "../../hooks/useGames";
-import { Genre } from "../../hooks/useGenres";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
 interface Props {
   dark: boolean;
-  genre: Genre | null;
+  gameQuery: GameQuery | null;
 }
 
-const GamesGrid = ({ dark, genre }: Props) => {
-  const { data, error, loading } = useGames(genre);
+const GamesGrid = ({ dark, gameQuery }: Props) => {
+  const { data, error, loading } = useGames(gameQuery);
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7];
 
   return (

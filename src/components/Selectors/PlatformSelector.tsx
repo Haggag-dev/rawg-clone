@@ -1,10 +1,24 @@
+import { PlatformDetails } from "../../hooks/useGames";
 import useParentPlatforms from "../../hooks/useParentPlatforms";
 import Selector from "./Selector";
 
-const PlatformSelector = () => {
+interface Props {
+  selectedPlatform: PlatformDetails | null;
+  setSelectedPlatform: (platform: PlatformDetails) => void;
+}
+
+const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
   const { data } = useParentPlatforms();
 
-  return <Selector buttonName={"Platform"} data={data} />;
+  return (
+    <Selector
+      buttonName={selectedPlatform?.name || "Platform"}
+      data={data}
+      setSelectedPlatform={(platform: PlatformDetails) =>
+        setSelectedPlatform(platform)
+      }
+    />
+  );
 };
 
 export default PlatformSelector;

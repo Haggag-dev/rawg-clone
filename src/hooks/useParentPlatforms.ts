@@ -1,11 +1,7 @@
 import useData from "./useData";
-
-export interface ParentPlatforms {
-  id: number;
-  name: string;
-}
+import { PlatformDetails } from "./useGames";
 
 const useParentPlatforms = () =>
-  useData<ParentPlatforms>("/platforms/lists/parents");
+  useData<PlatformDetails>("/platforms/lists/parents");
 
 export default useParentPlatforms;
