@@ -1,4 +1,3 @@
-import { PlatformDetails } from "../../hooks/useGames";
 import {
   FaWindows,
   FaPlaystation,
@@ -11,13 +10,10 @@ import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
-
-interface AllPlatformDetails extends PlatformDetails {
-  slug: string;
-}
+import { PlatformDetails } from "../../hooks/useGames";
 
 interface Props {
-  platforms: AllPlatformDetails[];
+  platforms: PlatformDetails[];
 }
 
 const PlatformIconsList = ({ platforms }: Props) => {
@@ -36,7 +32,7 @@ const PlatformIconsList = ({ platforms }: Props) => {
   return (
     <div className="flex text-neutral-500 gap-x-2">
       {platforms.map((p) => {
-        const IconComponent = platformIcons[p.slug];
+        const IconComponent = platformIcons[p.slug as string];
         return IconComponent ? <IconComponent key={p.slug} /> : null;
       })}
     </div>
