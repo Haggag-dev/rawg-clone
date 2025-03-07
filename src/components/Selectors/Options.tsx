@@ -1,16 +1,13 @@
-import { ParentPlatforms } from "../../hooks/useParentPlatforms";
-
-interface optionObj {
+export interface OptionType {
   id: number;
   name: string;
 }
-
-interface Props {
+interface Props<T extends OptionType> {
   setToggle: () => void;
-  options: optionObj[];
+  options: T[];
 }
 
-const Options = ({ options, setToggle }: Props) => {
+const Options = <T extends OptionType>({ options, setToggle }: Props<T>) => {
   return (
     <div className="z-1 absolute flex flex-col dark:bg-neutral-800 rounded-lg gap-y-2 items-start w-55 py-3 outline-1 outline-solid outline-neutral-700">
       {options.map((option) => (
