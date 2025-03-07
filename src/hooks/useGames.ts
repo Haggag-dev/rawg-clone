@@ -16,7 +16,6 @@ export interface Game {
 }
 
 const useGames = (gameQuery: GameQuery | null) => {
-  console.log(gameQuery);
   return useData<Game>(
     "/games",
     {

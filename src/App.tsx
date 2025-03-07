@@ -33,7 +33,9 @@ const App = () => {
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
         <h2 className="text-5xl ml-3 mb-7 font-bold">
           {gameQuery
-            ? capitalizeFirstLetter(gameQuery.genre?.name || "")
+            ? capitalizeFirstLetter(gameQuery.platform?.name || "") +
+              " " +
+              capitalizeFirstLetter(gameQuery.genre?.name || "")
             : "All"}{" "}
           Games
         </h2>
