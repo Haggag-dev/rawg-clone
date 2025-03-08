@@ -7,10 +7,12 @@ import { Genre } from "./hooks/useGenres";
 import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
 import PlatformSelector from "./components/Selectors/PlatformSelector";
 import { PlatformDetails } from "./hooks/useGames";
+import SortingSelector, { OrderSorter } from "./components/Selectors/SortingSelector";
 
 export interface GameQuery {
   genre: Genre;
   platform: PlatformDetails | null;
+  order: OrderSorter;
 }
 
 const App = () => {
@@ -35,17 +37,27 @@ const App = () => {
           {gameQuery
             ? capitalizeFirstLetter(gameQuery.platform?.name || "") +
               " " +
-              capitalizeFirstLetter(gameQuery.genre?.name || "") + " "
+              capitalizeFirstLetter(gameQuery.genre?.name || "") +
+              " "
             : "All"}
           Games
         </h2>
 
-        <PlatformSelector
-          selectedPlatform={gameQuery.platform}
-          setSelectedPlatform={(platform: PlatformDetails) =>
-            setGameQuery({ ...gameQuery, platform })
-          }
-        />
+        <div className="flex gap-x-2">
+          <PlatformSelector
+            selectedPlatform={gameQuery.platform}
+            setSelectedPlatform={(platform: PlatformDetails) =>
+              setGameQuery({ ...gameQuery, platform })
+            }
+          />
+
+          <SortingSelector
+            selectedOrder={gameQuery.order?.name || ""}
+            setSelectedOrder={(order: OrderSorter) =>
+              setGameQuery({ ...gameQuery, order })
+            }
+          />
+        </div>
 
         <GamesGrid dark={dark} gameQuery={gameQuery} />
       </main>
