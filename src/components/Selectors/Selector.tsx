@@ -39,7 +39,7 @@ const Selector = <T extends OptionType>({
       <button
         onClick={() => setToggle(!toggle)}
         ref={selectorRef}
-        className="flex gap-x-2 dark:bg-neutral-800 w-fit items-center mb-2.5 px-3 py-2 rounded-lg cursor-pointer hover:bg-neutral-700 font-semibold transition ease-in-out duration-350"
+        className="flex gap-x-2 bg-gray-200 hover:bg-neutral-300 dark:bg-neutral-800 w-fit items-center mb-2.5 px-3 py-2 rounded-lg cursor-pointer dark:hover:bg-neutral-700 font-semibold transition ease-in-out duration-350"
       >
         {buttonName} <IoIosArrowDown />
       </button>
