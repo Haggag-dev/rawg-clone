@@ -1,5 +1,3 @@
-import { PlatformDetails } from "../../hooks/useGames";
-
 export interface OptionType {
   id: number;
   name: string;
