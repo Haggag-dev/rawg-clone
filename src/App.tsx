@@ -35,8 +35,8 @@ const App = () => {
           {gameQuery
             ? capitalizeFirstLetter(gameQuery.platform?.name || "") +
               " " +
-              capitalizeFirstLetter(gameQuery.genre?.name || "")
-            : "All"}{" "}
+              capitalizeFirstLetter(gameQuery.genre?.name || "") + " "
+            : "All"}
           Games
         </h2>
 
