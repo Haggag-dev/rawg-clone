@@ -13,7 +13,7 @@ const GameCard = ({ game, dark }: Props) => {
   return (
     <div className="px-3 mb-3 flex flex-col h-full overflow-hidden">
       <img
-        className="rounded-t-lg"
+        className="rounded-t-lg object-cover"
         src={getCroppedImageUrl(game.background_image)}
         alt={`${game.name} Image`}
       />

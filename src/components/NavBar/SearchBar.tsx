@@ -18,7 +18,7 @@ const SearchBar = ({ setSearchQuery }: Props) => {
   };
 
   return (
-    <div className="relative flex grow-1 h-10 basis-30 shrink-0 bg-neutral-200 dark:bg-search ml-2 rounded-4xl items-center">
+    <div className="relative flex grow-1 h-10 basis-30 shrink-0 text-neutral-500 bg-neutral-200 dark:bg-search ml-2 rounded-4xl items-center">
       <button
         className="absolute flex size-10 items-center justify-center"
         onClick={handleSearch}
