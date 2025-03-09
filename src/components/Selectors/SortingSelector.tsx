@@ -4,8 +4,6 @@ export interface OrderSorter {
   id: number;
   name: string;
   slug: string;
-  //   relavance: ; // Might need re-adjustment
-  //   metacritic: string; // Popularity
 }
 
 interface Props {
