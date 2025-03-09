@@ -7,12 +7,15 @@ import { Genre } from "./hooks/useGenres";
 import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
 import PlatformSelector from "./components/Selectors/PlatformSelector";
 import { PlatformDetails } from "./hooks/useGames";
-import SortingSelector, { OrderSorter } from "./components/Selectors/SortingSelector";
+import SortingSelector, {
+  OrderSorter,
+} from "./components/Selectors/SortingSelector";
 
 export interface GameQuery {
   genre: Genre;
   platform: PlatformDetails | null;
   order: OrderSorter;
+  search: string;
 }
 
 const App = () => {
@@ -21,7 +24,13 @@ const App = () => {
 
   return (
     <div className="grid grid-cols-[250px_1fr] gap-y-3 text-black dark:text-white">
-      <NavBar dark={dark} toggleDarkMode={() => toggleDarkMode()} />
+      <NavBar
+        dark={dark}
+        toggleDarkMode={() => toggleDarkMode()}
+        setSearchQuery={(search: string) =>
+          setGameQuery({ ...gameQuery, search })
+        }
+      />
 
       <aside className="hidden lg:block mt-3">
         <GenreList

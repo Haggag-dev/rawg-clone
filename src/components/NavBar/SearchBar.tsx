@@ -1,16 +1,36 @@
+import { useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
 
-const SearchBar = () => {
+interface Props {
+  setSearchQuery: (search: string) => void;
+}
+
+const SearchBar = ({ setSearchQuery }: Props) => {
+  const inpRef = useRef<HTMLInputElement>(null);
+
+  const handleSearch = () => {
+    if (inpRef.current)
+      if (inpRef.current.value) setSearchQuery(inpRef.current.value);
+  };
+
+  const handleSearchEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") handleSearch();
+  };
   return (
     <div className="flex grow-1 h-10 basis-30 shrink-0 bg-neutral-200 dark:bg-search ml-2 rounded-4xl items-center">
-      <div className="flex size-10 items-center justify-center">
+      <button
+        className="flex size-10 items-center justify-center"
+        onClick={handleSearch}
+      >
         <IoIosSearch className="size-5" />
-      </div>
+      </button>
 
       <input
+        ref={inpRef}
         className="text-sm overflow-x-hidden w-full"
         type="text"
         placeholder="Search games..."
+        onKeyDown={handleSearchEnter}
       />
     </div>
   );
