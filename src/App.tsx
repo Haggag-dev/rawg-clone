@@ -52,7 +52,7 @@ const App = () => {
           Games
         </h2>
 
-        <div className="flex gap-x-2">
+        <div className="flex gap-x-px text-sm 3xs:text-base 3xs:gap-x-2">
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
             setSelectedPlatform={(platform: PlatformDetails) =>

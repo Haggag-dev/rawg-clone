@@ -11,13 +11,14 @@ export interface Game {
   rating: number;
 }
 
-const gameService = (gameQuery?: GameQuery) =>
+const gameService = (pageParam?: number, gameQuery?: GameQuery) =>
   new APIClient<Game>("/games", {
     params: {
       genres: gameQuery?.genre?.id,
       parent_platforms: gameQuery?.platform?.id,
       ordering: gameQuery?.order?.slug,
       search: gameQuery?.search,
+      page: pageParam,
     },
   });
 

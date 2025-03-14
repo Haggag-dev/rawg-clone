@@ -5,6 +5,8 @@
   --color-dark: #121212;
   --color-light: white;
   --color-search: #1b1b1b;
+
+  --breakpoint-3xs: 350px;
 }
 
 /* * {
