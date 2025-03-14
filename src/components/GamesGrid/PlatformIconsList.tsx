@@ -32,7 +32,7 @@ const PlatformIconsList = ({ platforms }: Props) => {
     <div className="flex text-neutral-500 gap-x-2">
       {platforms.map((p) => {
         const IconComponent = platformIcons[p.slug as string];
-        return IconComponent ? <IconComponent key={p.slug} /> : null;
+        return IconComponent ? <IconComponent key={p.slug} size={14} /> : null;
       })}
     </div>
   );
