@@ -1,5 +1,5 @@
-import { PlatformDetails } from "../../hooks/usePlatforms";
 import usePlatforms from "../../hooks/usePlatforms";
+import { PlatformDetails } from "../../services/platformService";
 import Selector from "./Selector";
 
 interface Props {

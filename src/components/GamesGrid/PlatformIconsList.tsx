@@ -1,16 +1,15 @@
+import { IconType } from "react-icons";
+import { BsGlobe, BsNintendoSwitch } from "react-icons/bs";
 import {
-  FaWindows,
-  FaPlaystation,
-  FaXbox,
+  FaAndroid,
   FaApple,
   FaLinux,
-  FaAndroid,
+  FaPlaystation,
+  FaWindows,
+  FaXbox,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { BsNintendoSwitch } from "react-icons/bs";
-import { BsGlobe } from "react-icons/bs";
-import { IconType } from "react-icons";
-import { PlatformDetails } from "../../hooks/usePlatforms";
+import { PlatformDetails } from "../../services/platformService";
 
 interface Props {
   platforms: PlatformDetails[];

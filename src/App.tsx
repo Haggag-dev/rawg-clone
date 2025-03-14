@@ -7,9 +7,9 @@ import SortingSelector, {
   OrderSorter,
 } from "./components/Selectors/SortingSelector";
 import useDarkMode from "./hooks/useDarkMode";
-import { Genre } from "./hooks/useGenres";
-import { PlatformDetails } from "./hooks/usePlatforms";
 import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
+import { Genre } from "./services/genreService";
+import { PlatformDetails } from "./services/platformService";
 
 export interface GameQuery {
   genre: Genre;

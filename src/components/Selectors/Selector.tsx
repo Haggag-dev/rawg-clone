@@ -1,8 +1,8 @@
-import { IoIosArrowDown } from "react-icons/io";
-import { useEffect, useRef, useState } from "react";
-import Options, { OptionType } from "./Options";
 import { AnimatePresence, motion } from "framer-motion";
-import { PlatformDetails } from "../../hooks/usePlatforms";
+import { useEffect, useRef, useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+import { PlatformDetails } from "../../services/platformService";
+import Options, { OptionType } from "./Options";
 
 interface Props<T extends OptionType> {
   buttonName: string;
