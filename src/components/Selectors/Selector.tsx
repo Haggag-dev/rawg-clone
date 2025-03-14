@@ -2,11 +2,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useEffect, useRef, useState } from "react";
 import Options, { OptionType } from "./Options";
 import { AnimatePresence, motion } from "framer-motion";
-import { PlatformDetails } from "../../hooks/useGames";
+import { PlatformDetails } from "../../hooks/usePlatforms";
 
 interface Props<T extends OptionType> {
   buttonName: string;
-  data: T[];
+  data: T[] | undefined;
   setState: (update: any) => void;
 }
 

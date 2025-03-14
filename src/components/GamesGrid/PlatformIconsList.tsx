@@ -10,7 +10,7 @@ import { MdPhoneIphone } from "react-icons/md";
 import { BsNintendoSwitch } from "react-icons/bs";
 import { BsGlobe } from "react-icons/bs";
 import { IconType } from "react-icons";
-import { PlatformDetails } from "../../hooks/useGames";
+import { PlatformDetails } from "../../hooks/usePlatforms";
 
 interface Props {
   platforms: PlatformDetails[];

@@ -1,5 +1,5 @@
-import { PlatformDetails } from "../../hooks/useGames";
-import useParentPlatforms from "../../hooks/useParentPlatforms";
+import { PlatformDetails } from "../../hooks/usePlatforms";
+import usePlatforms from "../../hooks/usePlatforms";
 import Selector from "./Selector";
 
 interface Props {
@@ -8,12 +8,12 @@ interface Props {
 }
 
 const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
-  const { data } = useParentPlatforms();
+  const { data } = usePlatforms();
 
   return (
     <Selector
       buttonName={selectedPlatform?.name || "Platform"}
-      data={data}
+      data={data?.results}
       setState={(platform: PlatformDetails) => setSelectedPlatform(platform)}
     />
   );

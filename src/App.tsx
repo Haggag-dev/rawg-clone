@@ -1,15 +1,15 @@
-import NavBar from "./components/NavBar/NavBar";
+import { useState } from "react";
 import GamesGrid from "./components/GamesGrid/GamesGrid";
 import GenreList from "./components/Genres/GenreList";
-import useDarkMode from "./hooks/useDarkMode";
-import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
-import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
+import NavBar from "./components/NavBar/NavBar";
 import PlatformSelector from "./components/Selectors/PlatformSelector";
-import { PlatformDetails } from "./hooks/useGames";
 import SortingSelector, {
   OrderSorter,
 } from "./components/Selectors/SortingSelector";
+import useDarkMode from "./hooks/useDarkMode";
+import { Genre } from "./hooks/useGenres";
+import { PlatformDetails } from "./hooks/usePlatforms";
+import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
 
 export interface GameQuery {
   genre: Genre;
