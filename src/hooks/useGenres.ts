@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { CACHE_KEY_GENRES } from "../constants";
+import genres from "../data/genres";
 import { FetchResponse } from "../services/apiClient";
 import genreService, { Genre } from "../services/genreService";
 
@@ -8,6 +9,7 @@ const useGenres = () =>
     queryKey: CACHE_KEY_GENRES,
     queryFn: genreService.getAll,
     staleTime: 30 * 1000 * 60, // Should I increase it?
+    initialData: genres,
   });
 
 export default useGenres;
