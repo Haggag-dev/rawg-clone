@@ -1,9 +1,8 @@
 import useGenres from "../../hooks/useGenres";
-import { Genre } from "../../services/genreService";
 
 interface Props {
-  selectedGenre: Genre | null;
-  setSelectedGenre: (genre: Genre) => void;
+  selectedGenre: number;
+  setSelectedGenre: (genreId: number) => void;
 }
 
 const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
@@ -38,9 +37,9 @@ const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
                 />
                 <button
                   className={`text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline ${
-                    genre.id === selectedGenre?.id ? "font-bold" : ""
+                    genre.id === selectedGenre ? "font-bold" : ""
                   }`}
-                  onClick={() => setSelectedGenre(genre)}
+                  onClick={() => setSelectedGenre(genre.id)}
                 >
                   {genre.name}
                 </button>

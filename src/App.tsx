@@ -3,18 +3,14 @@ import GamesGrid from "./components/GamesGrid/GamesGrid";
 import GenreList from "./components/Genres/GenreList";
 import NavBar from "./components/NavBar/NavBar";
 import PlatformSelector from "./components/Selectors/PlatformSelector";
-import SortingSelector, {
-  OrderSorter,
-} from "./components/Selectors/SortingSelector";
+import SelectorHeader from "./components/Selectors/SelectorHeader";
+import SortingSelector from "./components/Selectors/SortingSelector";
 import useDarkMode from "./hooks/useDarkMode";
-import capitalizeFirstLetter from "./services/capitalizeFirstLetter";
-import { Genre } from "./services/genreService";
-import { PlatformDetails } from "./services/platformService";
 
 export interface GameQuery {
-  genre: Genre;
-  platform: PlatformDetails | null;
-  order: OrderSorter;
+  genreId: number;
+  platformId: number;
+  orderId: number;
   search: string;
 }
 
@@ -34,36 +30,28 @@ const App = () => {
 
       <aside className="hidden lg:block mt-3">
         <GenreList
-          selectedGenre={gameQuery.genre}
-          setSelectedGenre={(genre: Genre) =>
-            setGameQuery({ ...gameQuery, genre })
+          selectedGenre={gameQuery.genreId}
+          setSelectedGenre={(genreId: number) =>
+            setGameQuery({ ...gameQuery, genreId })
           }
         />
       </aside>
 
       <main className="col-span-2 lg:col-span-1 lg:col-start-2">
-        <h2 className="text-5xl ml-3 mb-7 font-bold">
-          {gameQuery
-            ? capitalizeFirstLetter(gameQuery.platform?.name || "") +
-              " " +
-              capitalizeFirstLetter(gameQuery.genre?.name || "") +
-              " "
-            : "All"}
-          Games
-        </h2>
+        <SelectorHeader gameQuery={gameQuery} />
 
         <div className="flex gap-x-px text-sm 3xs:text-base 3xs:gap-x-2">
           <PlatformSelector
-            selectedPlatform={gameQuery.platform}
-            setSelectedPlatform={(platform: PlatformDetails) =>
-              setGameQuery({ ...gameQuery, platform })
+            selectedPlatform={gameQuery.platformId}
+            setSelectedPlatform={(platformId: number) =>
+              setGameQuery({ ...gameQuery, platformId })
             }
           />
 
           <SortingSelector
-            selectedOrder={gameQuery.order?.name || ""}
-            setSelectedOrder={(order: OrderSorter) =>
-              setGameQuery({ ...gameQuery, order })
+            selectedOrder={gameQuery.orderId || 0}
+            setSelectedOrder={(orderId: number) =>
+              setGameQuery({ ...gameQuery, orderId })
             }
           />
         </div>

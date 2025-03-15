@@ -1,10 +1,10 @@
 import usePlatforms from "../../hooks/usePlatforms";
-import { PlatformDetails } from "../../services/platformService";
+import getObjectName from "../../services/getObjectName";
 import Selector from "./Selector";
 
 interface Props {
-  selectedPlatform: PlatformDetails | null;
-  setSelectedPlatform: (platform: PlatformDetails) => void;
+  selectedPlatform: number;
+  setSelectedPlatform: (platformId: number) => void;
 }
 
 const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
@@ -12,9 +12,9 @@ const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
 
   return (
     <Selector
-      buttonName={selectedPlatform?.name || "Platform"}
+      buttonName={getObjectName(selectedPlatform, data?.results) || "Platform"}
       data={data?.results}
-      setState={(platform: PlatformDetails) => setSelectedPlatform(platform)}
+      setState={(platformId: number) => setSelectedPlatform(platformId)}
     />
   );
 };

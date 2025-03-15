@@ -6,7 +6,7 @@ export interface OptionType {
 interface Props<T extends OptionType> {
   setToggle: () => void;
   options: T[] | undefined;
-  setState: (update: any) => void;
+  setState: (update: number) => void;
 }
 
 const Options = <T extends OptionType>({
@@ -22,7 +22,7 @@ const Options = <T extends OptionType>({
           key={option.id}
           onClick={() => {
             setToggle();
-            setState(option);
+            setState(option.id);
           }}
         >
           {option.name}

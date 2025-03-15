@@ -1,13 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { PlatformDetails } from "../../services/platformService";
 import Options, { OptionType } from "./Options";
 
 interface Props<T extends OptionType> {
   buttonName: string;
   data: T[] | undefined;
-  setState: (update: any) => void;
+  setState: (update: number) => void;
 }
 
 const Selector = <T extends OptionType>({
@@ -55,7 +54,7 @@ const Selector = <T extends OptionType>({
             <Options
               options={data}
               setToggle={() => setToggle(!toggle)}
-              setState={(platform: PlatformDetails) => setState(platform)}
+              setState={(platformId: number) => setState(platformId)}
             />
           </motion.div>
         )}
