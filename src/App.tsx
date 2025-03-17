@@ -1,30 +1,12 @@
-import GamesGrid from "./components/GamesGrid/GamesGrid";
-import GenreList from "./components/Genres/GenreList";
-import NavBar from "./components/NavBar/NavBar";
-import PlatformSelector from "./components/Selectors/PlatformSelector";
-import SelectorHeader from "./components/Selectors/SelectorHeader";
-import SortingSelector from "./components/Selectors/SortingSelector";
+import MainPage from "./components/MainPage/MainPage";
+import NavBar from "./components/MainPage/NavBar/NavBar";
 
 const App = () => {
   return (
     <div className="grid grid-cols-[250px_1fr] gap-y-3 text-black dark:text-white">
       <NavBar />
 
-      <aside className="hidden lg:block mt-3">
-        <GenreList />
-      </aside>
-
-      <main className="col-span-2 lg:col-span-1 lg:col-start-2">
-        <SelectorHeader />
-
-        <div className="flex gap-x-px text-sm 3xs:text-base 3xs:gap-x-2">
-          <PlatformSelector />
-
-          <SortingSelector />
-        </div>
-
-        <GamesGrid />
-      </main>
+      <MainPage />
     </div>
   );
 };

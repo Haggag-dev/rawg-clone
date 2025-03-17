@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
-import useGameQueryStore from "../../stores/gameQueryStore";
+import useGameQueryStore from "../../../stores/gameQueryStore";
 
 const SearchBar = () => {
   const inpRef = useRef<HTMLInputElement>(null);

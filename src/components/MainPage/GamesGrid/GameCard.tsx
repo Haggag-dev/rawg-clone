@@ -1,5 +1,5 @@
-import { Game } from "../../services/gameService";
-import getCroppedImageUrl from "../../services/imageUrl";
+import { Game } from "../../../services/gameService";
+import getCroppedImageUrl from "../../../services/imageUrl";
 import CriticScore from "./CriticScore";
 import CriticScoreIcon from "./CriticScoreIcon";
 import PlatformIconsList from "./PlatformIconsList";
@@ -22,9 +22,7 @@ const GameCard = ({ game }: Props) => {
             platforms={game.parent_platforms.map((p) => p.platform)}
           />
 
-          {game.metacritic ? (
-            <CriticScore score={game.metacritic}  />
-          ) : null}
+          {game.metacritic ? <CriticScore score={game.metacritic} /> : null}
         </div>
         <p className="text-2xl font-bold mt-3 text-start grow-1">
           {game.name} <CriticScoreIcon score={game.rating} />
