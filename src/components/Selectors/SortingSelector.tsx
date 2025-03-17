@@ -1,5 +1,5 @@
-import { getOptionData, options } from "../../../services/orderOptions";
-import useGameQueryStore from "../../../stores/gameQueryStore";
+import { getOptionData, options } from "../../services/orderOptions";
+import useGameQueryStore from "../../stores/gameQueryStore";
 import Selector from "./Selector";
 
 const SortingSelector = () => {

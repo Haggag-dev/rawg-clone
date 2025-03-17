@@ -1,8 +1,8 @@
-import GamesGrid from "./GamesGrid/GamesGrid";
-import GenreList from "./Genres/GenreList";
-import PlatformSelector from "./Selectors/PlatformSelector";
-import SelectorHeader from "./Selectors/SelectorHeader";
-import SortingSelector from "./Selectors/SortingSelector";
+import GamesGrid from "../components/GamesGrid/GamesGrid";
+import GenreList from "../components/Genres/GenreList";
+import PlatformSelector from "../components/Selectors/PlatformSelector";
+import SelectorHeader from "../components/Selectors/SelectorHeader";
+import SortingSelector from "../components/Selectors/SortingSelector";
 
 const MainPage = () => {
   return (

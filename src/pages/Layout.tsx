@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "./components/MainPage/NavBar/NavBar";
+import NavBar from "../components/NavBar/NavBar";
 
-const App = () => {
+const Layout = () => {
   return (
     <div className="grid grid-cols-[250px_1fr] gap-y-3 text-black dark:text-white">
       <NavBar />
@@ -11,4 +11,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Layout;

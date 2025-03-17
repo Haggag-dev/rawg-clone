@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 
-const GameDetailsPage = () => {
+const GameDetails = () => {
   const params = useParams();
 
   return <div>GameDetails {params.id}</div>;
 };
 
-export default GameDetailsPage;
+export default GameDetails;

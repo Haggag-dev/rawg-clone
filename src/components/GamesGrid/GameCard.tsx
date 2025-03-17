@@ -1,5 +1,5 @@
-import { Game } from "../../../services/gameService";
-import getCroppedImageUrl from "../../../services/imageUrl";
+import { Game } from "../../services/gameService";
+import getCroppedImageUrl from "../../services/imageUrl";
 import CriticScore from "./CriticScore";
 import CriticScoreIcon from "./CriticScoreIcon";
 import PlatformIconsList from "./PlatformIconsList";
