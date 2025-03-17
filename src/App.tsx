@@ -1,4 +1,4 @@
-import MainPage from "./components/MainPage/MainPage";
+import { Outlet } from "react-router-dom";
 import NavBar from "./components/MainPage/NavBar/NavBar";
 
 const App = () => {
@@ -6,7 +6,7 @@ const App = () => {
     <div className="grid grid-cols-[250px_1fr] gap-y-3 text-black dark:text-white">
       <NavBar />
 
-      <MainPage />
+      <Outlet />
     </div>
   );
 };
