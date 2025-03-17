@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Game } from "../../services/gameService";
 import getCroppedImageUrl from "../../services/imageUrl";
 import CriticScore from "./CriticScore";
@@ -10,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <div className="px-3 mb-3 flex flex-col h-full overflow-hidden">
+    <div className="px-3 mb-3 flex flex-col h-full overflow-hidden hover:scale-102">
       <img
         className="rounded-t-lg object-cover"
         src={getCroppedImageUrl(game.background_image)}
@@ -24,9 +25,12 @@ const GameCard = ({ game }: Props) => {
 
           {game.metacritic ? <CriticScore score={game.metacritic} /> : null}
         </div>
-        <p className="text-2xl font-bold mt-3 text-start grow-1">
+        <Link
+          to={`/games/${game.slug}`}
+          className="text-2xl font-bold mt-3 text-start grow-1 hover:underline"
+        >
           {game.name} <CriticScoreIcon score={game.rating} />
-        </p>
+        </Link>
       </div>
     </div>
   );

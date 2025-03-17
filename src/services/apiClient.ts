@@ -22,6 +22,8 @@ class APIClient<T> {
     this.requestParams = requestParams;
   }
 
+  get = () => axiosInstance.get<T>(this.endpoint).then((res) => res.data);
+
   getAll = () =>
     axiosInstance
       .get<FetchResponse<T>>(this.endpoint, this.requestParams)
