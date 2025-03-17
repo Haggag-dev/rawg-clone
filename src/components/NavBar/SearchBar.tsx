@@ -1,16 +1,14 @@
 import { useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  setSearchQuery: (search: string) => void;
-}
-
-const SearchBar = ({ setSearchQuery }: Props) => {
+const SearchBar = () => {
   const inpRef = useRef<HTMLInputElement>(null);
+  const setSearchString = useGameQueryStore((s) => s.setSearchString);
 
   const handleSearch = () => {
     if (inpRef.current)
-      if (inpRef.current.value) setSearchQuery(inpRef.current.value);
+      if (inpRef.current.value) setSearchString(inpRef.current.value);
   };
 
   const handleSearchEnter = (event: React.KeyboardEvent<HTMLInputElement>) => {

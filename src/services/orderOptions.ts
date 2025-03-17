@@ -31,7 +31,9 @@ const options = [
   },
 ];
 
-const getOptionData = (orderId: number) => {
+const getOptionData = (orderId: number | undefined) => {
+  if (!orderId) return { name: "", slug: "" };
+
   for (let i = 0; i < options.length; i++)
     if (orderId === options[i].id)
       return { name: options[i].name, slug: options[i].slug };

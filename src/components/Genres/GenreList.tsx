@@ -1,13 +1,13 @@
 import useGenres from "../../hooks/useGenres";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  selectedGenre: number;
-  setSelectedGenre: (genreId: number) => void;
-}
-
-const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
+const GenreList = () => {
   const { data, error, isLoading } = useGenres();
+
   const skeletonKeys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  const setGenreId = useGameQueryStore((s) => s.setGenreId);
+  const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
 
   if (error) return;
 
@@ -37,9 +37,9 @@ const GenreList = ({ selectedGenre, setSelectedGenre }: Props) => {
                 />
                 <button
                   className={`text-neutral-500 dark:text-neutral-300 cursor-pointer hover:underline ${
-                    genre.id === selectedGenre ? "font-bold" : ""
+                    genre.id === selectedGenreId ? "font-bold" : ""
                   }`}
-                  onClick={() => setSelectedGenre(genre.id)}
+                  onClick={() => setGenreId(genre.id)}
                 >
                   {genre.name}
                 </button>

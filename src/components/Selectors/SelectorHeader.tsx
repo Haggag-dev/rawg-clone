@@ -1,29 +1,26 @@
-import { GameQuery } from "../../App";
 import useGenres from "../../hooks/useGenres";
 import usePlatforms from "../../hooks/usePlatforms";
 import capitalizeFirstLetter from "../../services/capitalizeFirstLetter";
 import getObjectName from "../../services/getObjectName";
+import useGameQueryStore from "../../store";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const SelectorHeader = ({ gameQuery }: Props) => {
+const SelectorHeader = () => {
   const { data: genres } = useGenres();
   const { data: platforms } = usePlatforms();
 
+  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
+
   return (
     <h2 className="text-5xl ml-3 mb-7 font-bold">
-      {gameQuery
+      {platformId || genreId
         ? capitalizeFirstLetter(
-            getObjectName(gameQuery.platformId, platforms?.results) || ""
+            getObjectName(platformId, platforms?.results) || ""
           ) +
           " " +
-          capitalizeFirstLetter(
-            getObjectName(gameQuery.genreId, genres?.results) || ""
-          ) +
+          capitalizeFirstLetter(getObjectName(genreId, genres?.results) || "") +
           " "
-        : "All"}
+        : "All "}
       Games
     </h2>
   );

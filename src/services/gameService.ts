@@ -1,4 +1,4 @@
-import { GameQuery } from "../App";
+import { GameQuery } from "../store";
 import APIClient from "./apiClient";
 import { getOptionData } from "./orderOptions";
 import { PlatformDetails } from "./platformService";
@@ -12,7 +12,7 @@ export interface Game {
   rating: number;
 }
 
-const gameService = (pageParam?: number, gameQuery?: GameQuery) => {
+const gameService = (gameQuery: GameQuery, pageParam?: number) => {
   const { slug } = getOptionData(gameQuery?.orderId || 0);
 
   return new APIClient<Game>("/games", {
@@ -20,7 +20,7 @@ const gameService = (pageParam?: number, gameQuery?: GameQuery) => {
       genres: gameQuery?.genreId,
       parent_platforms: gameQuery?.platformId,
       ordering: slug,
-      search: gameQuery?.search,
+      search: gameQuery?.searchString,
       page: pageParam,
     },
   });

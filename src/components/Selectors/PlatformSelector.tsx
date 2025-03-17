@@ -1,18 +1,19 @@
 import usePlatforms from "../../hooks/usePlatforms";
 import getObjectName from "../../services/getObjectName";
+import useGameQueryStore from "../../store";
 import Selector from "./Selector";
 
-interface Props {
-  selectedPlatform: number;
-  setSelectedPlatform: (platformId: number) => void;
-}
-
-const PlatformSelector = ({ selectedPlatform, setSelectedPlatform }: Props) => {
+const PlatformSelector = () => {
   const { data } = usePlatforms();
+
+  const selectedPlatformId = useGameQueryStore((s) => s.gameQuery.platformId);
+  const setSelectedPlatform = useGameQueryStore((s) => s.setPlatformId);
 
   return (
     <Selector
-      buttonName={getObjectName(selectedPlatform, data?.results) || "Platform"}
+      buttonName={
+        getObjectName(selectedPlatformId, data?.results) || "Platform"
+      }
       data={data?.results}
       setState={(platformId: number) => setSelectedPlatform(platformId)}
     />

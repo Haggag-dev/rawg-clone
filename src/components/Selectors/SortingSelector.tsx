@@ -1,20 +1,19 @@
 import { getOptionData, options } from "../../services/orderOptions";
+import useGameQueryStore from "../../store";
 import Selector from "./Selector";
 
-interface Props {
-  selectedOrder: number;
-  setSelectedOrder: (orderId: number) => void;
-}
+const SortingSelector = () => {
+  const selectedOrderId = useGameQueryStore((s) => s.gameQuery.orderId);
+  const setSelectedOrderId = useGameQueryStore((s) => s.setOrderId);
 
-const SortingSelector = ({ selectedOrder, setSelectedOrder }: Props) => {
   const orderOptions = options;
-  const { name } = getOptionData(selectedOrder);
+  const { name } = getOptionData(selectedOrderId);
 
   return (
     <Selector
       buttonName={name ? `Order by: ${name}` : "Order by: Relevance"}
       data={orderOptions}
-      setState={(orderId: number) => setSelectedOrder(orderId)}
+      setState={(orderId: number) => setSelectedOrderId(orderId)}
     />
   );
 };
