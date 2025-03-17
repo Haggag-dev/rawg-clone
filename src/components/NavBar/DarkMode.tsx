@@ -1,9 +1,8 @@
-interface Props {
-  dark: boolean;
-  toggleDarkMode: () => void;
-}
+import useDarkMode from "../../hooks/useDarkMode";
 
-const DarkMode = ({ dark, toggleDarkMode }: Props) => {
+const DarkMode = () => {
+  const { dark, toggleDarkMode } = useDarkMode();
+
   return (
     <div className="flex basis-0 items-center ml-2 dark:bg-dark">
       <button

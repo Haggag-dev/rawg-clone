@@ -3,11 +3,7 @@ import useGames from "../../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 
-interface Props {
-  dark: boolean;
-}
-
-const GamesGrid = ({ dark }: Props) => {
+const GamesGrid = () => {
   const {
     data,
     error,
@@ -34,7 +30,7 @@ const GamesGrid = ({ dark }: Props) => {
           : data?.pages.map((page, index) => (
               <React.Fragment key={index}>
                 {page.results.map((game) => (
-                  <GameCard key={game.id} game={game} dark={dark} />
+                  <GameCard key={game.id} game={game} />
                 ))}
               </React.Fragment>
             ))}

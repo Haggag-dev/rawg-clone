@@ -1,6 +1,6 @@
 import usePlatforms from "../../hooks/usePlatforms";
 import getObjectName from "../../services/getObjectName";
-import useGameQueryStore from "../../store";
+import useGameQueryStore from "../../stores/gameQueryStore";
 import Selector from "./Selector";
 
 const PlatformSelector = () => {

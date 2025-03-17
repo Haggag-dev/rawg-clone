@@ -2,12 +2,7 @@ import DarkMode from "./DarkMode";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 
-interface Props {
-  dark: boolean;
-  toggleDarkMode: () => void;
-}
-
-const NavBar = ({ dark, toggleDarkMode }: Props) => {
+const NavBar = () => {
   return (
     <nav className="w-full h-20 col-span-2 mt-2">
       <div className="flex items-center h-15 px-2.5">
@@ -15,7 +10,7 @@ const NavBar = ({ dark, toggleDarkMode }: Props) => {
 
         <SearchBar />
 
-        <DarkMode dark={dark} toggleDarkMode={toggleDarkMode} />
+        <DarkMode />
       </div>
     </nav>
   );

@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useDarkModeStore from "../stores/darkModeStore";
 
 const darkMode = () => {
-  const getStoredDarkMode = () =>
-    JSON.parse(localStorage.getItem("dark") || "true");
-  const saveDarkMode = (dark: boolean) => {
-    localStorage.setItem("dark", JSON.stringify(dark));
-  };
-  const [dark, setDark] = useState(getStoredDarkMode());
+  const { dark, toggle } = useDarkModeStore();
 
   useEffect(() => {
     document.querySelector("body")?.classList.toggle("dark", dark);
-    saveDarkMode(dark);
   }, [dark]);
 
-  const toggleDarkMode = () => setDark((prevDark: boolean) => !prevDark);
+  const toggleDarkMode = () => toggle();
 
   return { dark, toggleDarkMode };
 };

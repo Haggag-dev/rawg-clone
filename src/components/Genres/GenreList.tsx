@@ -1,5 +1,5 @@
 import useGenres from "../../hooks/useGenres";
-import useGameQueryStore from "../../store";
+import useGameQueryStore from "../../stores/gameQueryStore";
 
 const GenreList = () => {
   const { data, error, isLoading } = useGenres();

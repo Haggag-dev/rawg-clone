@@ -6,10 +6,9 @@ import PlatformIconsList from "./PlatformIconsList";
 
 interface Props {
   game: Game;
-  dark: boolean;
 }
 
-const GameCard = ({ game, dark }: Props) => {
+const GameCard = ({ game }: Props) => {
   return (
     <div className="px-3 mb-3 flex flex-col h-full overflow-hidden">
       <img
@@ -24,7 +23,7 @@ const GameCard = ({ game, dark }: Props) => {
           />
 
           {game.metacritic ? (
-            <CriticScore score={game.metacritic} dark={dark} />
+            <CriticScore score={game.metacritic}  />
           ) : null}
         </div>
         <p className="text-2xl font-bold mt-3 text-start grow-1">

@@ -1,4 +1,4 @@
-import { GameQuery } from "../store";
+import { GameQuery } from "../stores/gameQueryStore";
 import APIClient from "./apiClient";
 import { getOptionData } from "./orderOptions";
 import { PlatformDetails } from "./platformService";

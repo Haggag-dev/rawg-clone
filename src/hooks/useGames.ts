@@ -3,7 +3,7 @@ import ms from "ms";
 import { CACHE_KEY_GAMES } from "../constants";
 import { FetchResponse } from "../services/apiClient";
 import gameService, { Game } from "../services/gameService";
-import useGameQueryStore from "../store";
+import useGameQueryStore from "../stores/gameQueryStore";
 
 const useGames = () => {
   const gameQuery = useGameQueryStore((s) => s.gameQuery);

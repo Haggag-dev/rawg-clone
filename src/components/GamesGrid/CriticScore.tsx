@@ -1,6 +1,7 @@
+import useDarkMode from "../../hooks/useDarkMode";
+
 interface Props {
   score: number;
-  dark: boolean;
 }
 
 interface ScoreColor {
@@ -8,7 +9,9 @@ interface ScoreColor {
   color: string;
 }
 
-const CriticScore = ({ score, dark }: Props) => {
+const CriticScore = ({ score }: Props) => {
+  const { dark } = useDarkMode();
+
   let scoreColor: ScoreColor =
     score > 75
       ? { colorDarker: "#344038", color: "#9AE6B4" }
