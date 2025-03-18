@@ -9,7 +9,7 @@ import {
   FaXbox,
 } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { PlatformDetails } from "../../services/platformService";
+import { PlatformDetails } from "../../entities/PlatformDetails";
 
 interface Props {
   platforms: PlatformDetails[];

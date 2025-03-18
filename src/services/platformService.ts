@@ -1,9 +1,4 @@
 import APIClient from "./apiClient";
-
-export interface PlatformDetails {
-  id: number;
-  name: string;
-  slug?: string;
-}
+import { PlatformDetails } from "../entities/PlatformDetails";
 
 export default new APIClient<PlatformDetails>("/platforms/lists/parents");

@@ -1,18 +1,7 @@
 import { GameQuery } from "../stores/gameQueryStore";
 import APIClient from "./apiClient";
+import { Game } from "../entities/Game";
 import { getOptionData } from "./orderOptions";
-import { PlatformDetails } from "./platformService";
-
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  description_raw: string;
-  background_image: string;
-  parent_platforms: { platform: PlatformDetails }[];
-  metacritic: number;
-  rating: number;
-}
 
 const gameService = (gameQuery: GameQuery, pageParam?: number) => {
   const { slug } = getOptionData(gameQuery?.orderId || 0);
