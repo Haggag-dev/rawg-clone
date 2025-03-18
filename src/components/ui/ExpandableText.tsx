@@ -20,7 +20,7 @@ const ExpandableText = ({ description, limit }: Props) => {
       onClick={handleClick}
       className="bg-yellow-200 text-black font-medium rounded-md px-2.5 cursor-pointer"
     >
-      Read More
+      {isExpanded ? "Read Less" : "Read More"}
     </button>
   );
 
