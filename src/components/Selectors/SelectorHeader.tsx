@@ -1,7 +1,7 @@
 import useGenres from "../../hooks/useGenres";
 import usePlatforms from "../../hooks/usePlatforms";
-import capitalizeFirstLetter from "../../services/capitalizeFirstLetter";
-import getObjectName from "../../services/getObjectName";
+import capitalizeFirstLetter from "../../utils/capitalizeFirstLetter";
+import getObjectName from "../../utils/getObjectName";
 import useGameQueryStore from "../../stores/gameQueryStore";
 
 const SelectorHeader = () => {

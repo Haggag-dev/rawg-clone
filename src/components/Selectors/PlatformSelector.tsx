@@ -1,5 +1,5 @@
 import usePlatforms from "../../hooks/usePlatforms";
-import getObjectName from "../../services/getObjectName";
+import getObjectName from "../../utils/getObjectName";
 import useGameQueryStore from "../../stores/gameQueryStore";
 import Selector from "./Selector";
 

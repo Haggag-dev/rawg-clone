@@ -1,4 +1,4 @@
-import { getOptionData, options } from "../../services/orderOptions";
+import { getOptionData, options } from "../../utils/orderOptions";
 import useGameQueryStore from "../../stores/gameQueryStore";
 import Selector from "./Selector";
 

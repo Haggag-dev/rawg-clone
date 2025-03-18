@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Game } from "../../entities/Game";
-import getCroppedImageUrl from "../../services/imageUrl";
+import getCroppedImageUrl from "../../utils/imageUrl";
 import CriticScore from "./CriticScore";
 import CriticScoreIcon from "./CriticScoreIcon";
 import PlatformIconsList from "./PlatformIconsList";

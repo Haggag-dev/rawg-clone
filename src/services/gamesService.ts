@@ -1,7 +1,7 @@
 import { GameQuery } from "../stores/gameQueryStore";
 import APIClient from "./apiClient";
 import { Game } from "../entities/Game";
-import { getOptionData } from "./orderOptions";
+import { getOptionData } from "../utils/orderOptions";
 
 const gameService = (gameQuery: GameQuery, pageParam?: number) => {
   const { slug } = getOptionData(gameQuery?.orderId || 0);
