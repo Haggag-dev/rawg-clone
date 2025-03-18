@@ -1,24 +1,26 @@
 import { useState } from "react";
 
 interface Props {
-  description: string;
+  text: string;
   limit: number;
 }
 
-const ExpandableText = ({ description, limit }: Props) => {
+const ExpandableText = ({ text, limit }: Props) => {
   const [isExpanded, setExpanded] = useState(false);
+
+  if (!text) return null;
 
   const handleClick = () => setExpanded(!isExpanded);
 
-  const text =
-    description.length > limit && !isExpanded
-      ? ` ${description.substring(0, 300).trim()}...`
-      : description;
+  const textFinalized =
+    text.length > limit && !isExpanded
+      ? ` ${text.substring(0, 300).trim()}...`
+      : text;
 
-  const button = description.length > limit && (
+  const button = text.length > limit && (
     <button
       onClick={handleClick}
-      className="bg-yellow-200 text-black font-medium rounded-md px-2.5 cursor-pointer"
+      className="bg-yellow-200 text-black font-medium rounded-md px-2.5 cursor-pointer hover:opacity-90"
     >
       {isExpanded ? "Read Less" : "Read More"}
     </button>
@@ -26,7 +28,7 @@ const ExpandableText = ({ description, limit }: Props) => {
 
   return (
     <p className="text-justify">
-      {text} {button}
+      {textFinalized} {button}
     </p>
   );
 };

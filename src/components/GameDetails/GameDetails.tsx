@@ -15,7 +15,7 @@ const GameDetails = () => {
   return (
     <div className="col-span-2 px-3">
       <h1 className="text-4xl font-bold mb-3">{game.name}</h1>
-      <ExpandableText description={game.description_raw} limit={300} />
+      <ExpandableText text={game.description_raw} limit={300} />
     </div>
   );
 };

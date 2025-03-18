@@ -40,7 +40,7 @@ const GamesGrid = () => {
       {hasNextPage && (
         <div className="flex w-full justify-center mt-4 mb-10">
           <button
-            className="bg-gray-200 dark:bg-[#202020] font-medium px-4 py-2 rounded-sm cursor-pointer"
+            className="bg-gray-200 dark:bg-[#202020] font-medium px-4 py-2 rounded-sm cursor-pointer hover:opacity-90"
             onClick={() => fetchNextPage()}
           >
             {isFetchingNextPage ? <Spinner /> : "Load More"}
