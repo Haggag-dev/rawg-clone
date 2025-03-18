@@ -1,10 +1,7 @@
 import APIClient from "./apiClient";
-
-export interface GameDetails {
-  description_raw: string;
-}
+import { Game } from "./gamesService";
 
 const gameDetailsService = (slug: string) =>
-  new APIClient<GameDetails>(`/games/${slug}`);
+  new APIClient<Game>(`/games/${slug}`);
 
 export default gameDetailsService;

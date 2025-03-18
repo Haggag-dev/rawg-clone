@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Game } from "../../services/gameService";
+import { Game } from "../../services/gamesService";
 import getCroppedImageUrl from "../../services/imageUrl";
 import CriticScore from "./CriticScore";
 import CriticScoreIcon from "./CriticScoreIcon";
@@ -11,7 +11,7 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <div className="px-3 mb-3 flex flex-col h-full overflow-hidden hover:scale-102">
+    <div className="px-3 mb-3 flex flex-col h-full overflow-hidden hover:scale-103 transition-transform ease-in duration-150">
       <img
         className="rounded-t-lg object-cover"
         src={getCroppedImageUrl(game.background_image)}
