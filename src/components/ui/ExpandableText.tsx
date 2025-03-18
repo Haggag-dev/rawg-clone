@@ -2,19 +2,20 @@ import { useState } from "react";
 
 interface Props {
   description: string;
+  limit: number;
 }
 
-const GameDescription = ({ description }: Props) => {
+const ExpandableText = ({ description, limit }: Props) => {
   const [isExpanded, setExpanded] = useState(false);
 
   const handleClick = () => setExpanded(!isExpanded);
 
   const text =
-    description.length > 300 && !isExpanded
+    description.length > limit && !isExpanded
       ? ` ${description.substring(0, 300).trim()}...`
       : description;
 
-  const button = description.length > 300 && (
+  const button = description.length > limit && (
     <button
       onClick={handleClick}
       className="bg-yellow-200 text-black font-medium rounded-md px-2.5 cursor-pointer"
@@ -30,4 +31,4 @@ const GameDescription = ({ description }: Props) => {
   );
 };
 
-export default GameDescription;
+export default ExpandableText;
