@@ -2,6 +2,7 @@ import useDarkMode from "../../hooks/useDarkMode";
 
 interface Props {
   score: number;
+  size?: "S";
 }
 
 interface ScoreColor {
@@ -9,7 +10,7 @@ interface ScoreColor {
   color: string;
 }
 
-const CriticScore = ({ score }: Props) => {
+const CriticScore = ({ score, size }: Props) => {
   const { dark } = useDarkMode();
 
   let scoreColor: ScoreColor =
@@ -19,9 +20,11 @@ const CriticScore = ({ score }: Props) => {
       ? { colorDarker: "#434231", color: "#FAF089" }
       : { colorDarker: "#404040", color: "white" };
 
+  const sizeStyle = size === "S" ? "w-8 text-sm" : "w-6 text-xs";
+
   return (
     <div
-      className={"w-6 text-center text-xs rounded-sm font-[650] pb-px"}
+      className={`${sizeStyle} text-center rounded-sm font-[650] pb-px`}
       style={
         dark
           ? {

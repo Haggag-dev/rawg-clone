@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import useGameDetails from "../../hooks/useGameDetails";
-import Spinner from "../ui/Spinner";
 import ExpandableText from "../ui/ExpandableText";
+import Spinner from "../ui/Spinner";
+import GameAttributes from "./GameAttributes";
 
 const GameDetails = () => {
   const { slug } = useParams();
@@ -13,10 +14,14 @@ const GameDetails = () => {
   if (error || !game) throw error;
 
   return (
-    <div className="col-span-2 px-3">
-      <h1 className="text-4xl font-bold mb-3">{game.name}</h1>
-      <ExpandableText text={game.description_raw} limit={300} />
-    </div>
+    <>
+      <div className="mb-4">
+        <h1 className="text-4xl font-bold mb-2">{game.name}</h1>
+        <ExpandableText text={game.description_raw} limit={300} />
+      </div>
+
+      <GameAttributes game={game} />
+    </>
   );
 };
 
