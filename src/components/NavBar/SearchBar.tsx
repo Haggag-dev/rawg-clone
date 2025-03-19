@@ -6,7 +6,6 @@ import useGameQueryStore from "../../stores/gameQueryStore";
 const SearchBar = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  console.log(pathname);
   const inpRef = useRef<HTMLInputElement>(null);
   const setSearchString = useGameQueryStore((s) => s.setSearchString);
 

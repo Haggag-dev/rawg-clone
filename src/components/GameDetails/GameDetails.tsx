@@ -4,6 +4,7 @@ import ExpandableText from "../ui/ExpandableText";
 import Spinner from "../ui/Spinner";
 import GameAttributes from "./GameAttributes";
 import GameTrailer from "./GameTrailer";
+import GameScreenshots from "./GameScreenshots";
 
 const GameDetails = () => {
   const { slug } = useParams();
@@ -24,6 +25,8 @@ const GameDetails = () => {
       <GameAttributes game={game} />
 
       <GameTrailer gameId={game.id} />
+
+      <GameScreenshots gameId={game.id} />
     </>
   );
 };
