@@ -16,17 +16,18 @@ const GameDetails = () => {
   if (error || !game) throw error;
 
   return (
-    <main className="mx-5 flex flex-col gap-y-4 mb-10 col-span-2">
+    <main className="sm:grid sm:gap-10 sm:grid-cols-2 mx-5 gap-y-4 mb-10 col-span-2">
       <div className="mb-4">
         <h1 className="text-4xl font-bold mb-2">{game.name}</h1>
         <ExpandableText text={game.description_raw} limit={300} />
+        <GameAttributes game={game} />
       </div>
 
-      <GameAttributes game={game} />
+      <div className="col-start-2 flex flex-col gap-y-4">
+        <GameTrailer gameId={game.id} />
 
-      <GameTrailer gameId={game.id} />
-
-      <GameScreenshots gameId={game.id} />
+        <GameScreenshots gameId={game.id} />
+      </div>
     </main>
   );
 };
