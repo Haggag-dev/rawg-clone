@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { IoIosSearch } from "react-icons/io";
+import { useLocation, useNavigate } from "react-router-dom";
 import useGameQueryStore from "../../stores/gameQueryStore";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const { pathname } = useLocation();
