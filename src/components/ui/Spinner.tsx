@@ -1,7 +1,7 @@
 const Spinner = () => {
   return (
     <svg
-      className="w-6 h-6 animate-spin text-black dark:text-neutral-500"
+      className="w-6 h-6 animate-spin text-black dark:text-neutral-500 mx-auto col-span-2"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 20 20"
