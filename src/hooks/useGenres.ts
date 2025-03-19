@@ -3,7 +3,7 @@ import { CACHE_KEY_GENRES } from "../constants";
 import genres from "../data/genres";
 import { FetchResponse } from "../services/apiClient";
 import genreService from "../services/genreService";
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 import ms from "ms";
 
 const useGenres = () =>

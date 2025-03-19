@@ -1,4 +1,4 @@
-import { Screenshot } from "../entities/Screenshot";
+import Screenshot from "../entities/Screenshot";
 import APIClient from "./apiClient";
 
 const screenshotsService = (gameId: number) =>
