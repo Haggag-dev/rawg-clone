@@ -9,11 +9,13 @@ interface Props {
 const GameAttributes = ({ game }: Props) => {
   return (
     <dl className="grid grid-cols-2 gap-y-8 my-5">
-      <DefinitionItem term="Platforms">
-        {game.parent_platforms.map(({ platform }) => (
-          <div key={platform.id}>{platform.name}</div>
-        ))}
-      </DefinitionItem>
+      {game.parent_platforms.length !== 0 && (
+        <DefinitionItem term="Platforms">
+          {game.parent_platforms.map(({ platform }) => (
+            <div key={platform.id}>{platform.name}</div>
+          ))}
+        </DefinitionItem>
+      )}
 
       {game.metacritic && (
         <DefinitionItem term="Metascore">
@@ -23,17 +25,21 @@ const GameAttributes = ({ game }: Props) => {
         </DefinitionItem>
       )}
 
-      <DefinitionItem term="Genres">
-        {game.genres.map((genre) => (
-          <div key={genre.id}>{genre.name}</div>
-        ))}
-      </DefinitionItem>
+      {game.genres.length !== 0 && (
+        <DefinitionItem term="Genres">
+          {game.genres.map((genre) => (
+            <div key={genre.id}>{genre.name}</div>
+          ))}
+        </DefinitionItem>
+      )}
 
-      <DefinitionItem term="Publishers">
-        {game.publishers.map((publisher) => (
-          <div key={publisher.id}>{publisher.name}</div>
-        ))}
-      </DefinitionItem>
+      {game.publishers.length !== 0 && (
+        <DefinitionItem term="Publishers">
+          {game.publishers.map((publisher) => (
+            <div key={publisher.id}>{publisher.name}</div>
+          ))}
+        </DefinitionItem>
+      )}
     </dl>
   );
 };
