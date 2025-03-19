@@ -3,6 +3,7 @@ import useGameDetails from "../../hooks/useGameDetails";
 import ExpandableText from "../ui/ExpandableText";
 import Spinner from "../ui/Spinner";
 import GameAttributes from "./GameAttributes";
+import GameTrailer from "./GameTrailer";
 
 const GameDetails = () => {
   const { slug } = useParams();
@@ -21,6 +22,8 @@ const GameDetails = () => {
       </div>
 
       <GameAttributes game={game} />
+
+      <GameTrailer gameId={game.id} />
     </>
   );
 };
