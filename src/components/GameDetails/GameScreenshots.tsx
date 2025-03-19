@@ -11,8 +11,13 @@ const GameScreenshots = ({ gameId }: Props) => {
 
   if (error) throw error;
 
-  console.log(data);
-  return <div>GameScreenshots</div>;
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      {data.results.map((screenshot) => (
+        <img key={screenshot.id} src={screenshot.image} className="rounded-sm" />
+      ))}
+    </div>
+  );
 };
 
 export default GameScreenshots;
