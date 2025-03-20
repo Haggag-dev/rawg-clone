@@ -3,9 +3,9 @@
 ## Overview
 A mini clone of the RAWG website that I built to practice front-end development with React 18 and TypeScript, while exploring effective ways to style it using Tailwind CSS 4.  
 
-For state management, I use **React Query** for server state management and **Zustand** for client state management.  
+For state management, I used **React Query**, making use of features like caching and infinite queries for efficient data fetching. On the client side, I used **Zustand** to manage **global state**, such as selected filters and user preferences.  
 
-You can access it [here](https://rawg-m-clone.netlify.app/). However, since I am using a free API key, the website may encounter a network error. If that happens, follow the **Setup** section below to configure your own API key.  
+You can access it here: [RAWG Clone Live Demo](https://rawg-m-clone.netlify.app/). However, since I am using a free API key, the website may encounter a network error. If that happens, follow the **Setup** section below to configure your own API key.  
 
 This project was built as a part of [this course](https://codewithmosh.com/p/ultimate-react-part2).  
 
