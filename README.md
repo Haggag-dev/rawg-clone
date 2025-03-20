@@ -1,8 +1,13 @@
 # RAWG Clone
 
 ## Overview
+A mini clone of the RAWG website that I built to practice front-end development with React 18 and TypeScript, while exploring effective ways to style it using Tailwind CSS 4.  
 
-This project uses a back-end proxy to securely handle API keys for making requests to the RAWG API. Since the API key provided by RAWG is free, it has a limited number of requests per day. If you exceed the limit, you may need to use your own API key.
+For state management, I use **React Query** for server state management and **Zustand** for client state management.  
+
+You can access it [here](https://app.netlify.com/sites/rawg-m-clone/configuration/general). However, since I am using a free API key, the website may encounter a network error. If that happens, follow the **Setup** section below to configure your own API key.  
+
+This project was built as a part of [this course](https://codewithmosh.com/p/ultimate-react-part2).  
 
 ## Setup
 
