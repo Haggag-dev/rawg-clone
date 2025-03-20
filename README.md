@@ -5,7 +5,7 @@ A mini clone of the RAWG website that I built to practice front-end development 
 
 For state management, I use **React Query** for server state management and **Zustand** for client state management.  
 
-You can access it [here](https://app.netlify.com/sites/rawg-m-clone/configuration/general). However, since I am using a free API key, the website may encounter a network error. If that happens, follow the **Setup** section below to configure your own API key.  
+You can access it [here](https://rawg-m-clone.netlify.app/). However, since I am using a free API key, the website may encounter a network error. If that happens, follow the **Setup** section below to configure your own API key.  
 
 This project was built as a part of [this course](https://codewithmosh.com/p/ultimate-react-part2).  
 
